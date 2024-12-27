@@ -10,10 +10,7 @@ import booksRouter from "./routes/books";
 const app = express();
 
 const corsOptions = {
-  origin: "*", // Allow all origins for testing purposes
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
+  origin: [/^http:\/\/localhost/, "http://amazing.you.com"],
 };
 
 app.use(cors(corsOptions));
